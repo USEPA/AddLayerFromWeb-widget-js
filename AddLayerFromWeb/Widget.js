@@ -18,7 +18,8 @@ define(
  'esri/layers/ArcGISDynamicMapServiceLayer', 'esri/layers/ArcGISTiledMapServiceLayer', 'esri/layers/FeatureLayer',"esri/layers/ArcGISImageServiceLayer","esri/layers/ImageServiceParameters",
  'esri/layers/GeoRSSLayer', 'esri/layers/KMLLayer', 'esri/layers/WMSLayer',
  'esri/symbols/SimpleMarkerSymbol', 'esri/symbols/SimpleLineSymbol',
- 'esri/renderers/SimpleRenderer'
+ 'esri/renderers/SimpleRenderer',
+ './configLocal'
 ], function (
   declare,
   BaseWidget,
@@ -38,7 +39,8 @@ define(
   ArcGISDynamicMapServiceLayer, ArcGISTiledMapServiceLayer, FeatureLayer,ArcGISImageServiceLayer,ImageServiceParameters,
   GeoRSSLayer, KMLLayer, WMSLayer,
   SimpleMarkerSymbol, SimpleLineSymbol,
-  SimpleRenderer
+  SimpleRenderer,
+  _config
 ) {
     
   //To create a widget, you need to derive from BaseWidget.
@@ -56,7 +58,7 @@ define(
             this._doService();
         },
         _doService: function () {
-            var sampleURL = this.config.sampleURL;
+            var sampleURL = _config.sampleURL;
             var stype = this.servicetype;
             dojo.query('[name=layerType]').filter(function (radio) {
                 if (radio.checked) stype = radio.value;

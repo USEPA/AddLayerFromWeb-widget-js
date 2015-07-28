@@ -1,4 +1,7 @@
-{"sampleURL": {
+define(
+[],
+function() {
+  var _config = {"sampleURL": {
         "arcgis": { "url": "http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Demographics/ESRI_Census_USA/MapServer"
                 , "note": "(http://&lt;server&gt;/arcgis/rest/services/&lt;service name&gt;/MapServer)"
         }
@@ -13,3 +16,7 @@
 	    }
     }
 }
+return _config;
+  
+});
+
